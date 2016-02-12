@@ -438,6 +438,7 @@ var sequence = [
 	{
 		action: 'update',
 		chart: 'unit',
+		type: 'proportion',
 		from: 'bar',
 		data: bardata,
 		highlight: { v: ['cat 6'], c: '#9e4e40' }, 
@@ -447,6 +448,7 @@ var sequence = [
 	{
 		action: 'update',
 		chart: 'unit',
+		type: 'proportion',
 		from: 'bar',
 		data: bardata,
 		highlight: { v: ['cat 8'], c: '#9e4e40' }, 
@@ -478,6 +480,7 @@ var sequence = [
 	{
 		action: 'draw',
 		chart: 'unit',
+		type: 'proportion',
 		from: 'pie',
 		data: piedata,
 		highlight: { v: ['<5'], c: '#9e4e40' }, 
@@ -488,6 +491,7 @@ var sequence = [
 	{
 		action: 'update',
 		chart: 'unit',
+		type: 'proportion',
 		from: 'pie',
 		data: piedata,
 		highlight: { v: ['18-24'], c: '#9e4e40' }, 
@@ -512,6 +516,7 @@ var sequence = [
 	{
 		action: 'draw',
 		chart: 'unit',
+		type: 'proportion',
 		from: 'area',
 		data: linedata,
 		highlight: { v: ['20150425'], c: '#9e4e40' }, 
@@ -521,6 +526,7 @@ var sequence = [
 	{
 		action: 'update',
 		chart: 'unit',
+		type: 'proportion',
 		from: 'area',
 		data: linedata,
 		highlight: { v: ['20150429'], c: '#9e4e40' }, 
