@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Parallax Test</title>
+	
+	<script type="text/javascript" src="../../__libs/d3.js"></script>
+	<script type="text/javascript" src="../../__libs/d3.topojson.js"></script>
+	<script type="text/javascript" src="../../__libs/jquery.js"></script>
+	<script type="text/javascript" src="../../__libs/bootstrap.min.js"></script>
+	<!--<script type="text/javascript" src="../../__libs/lethargy.js"></script>-->
+
+	<script type="text/javascript" src="js/general.function.js"></script>
+	<script type="text/javascript" src="js/draw.js"></script>
+	<script type="text/javascript" src="js/set.text.js"></script>
+	<script type="text/javascript" src="js/set.persona.proportions.js"></script>
+	<script type="text/javascript" src="js/set.persona.js"></script>
+
+	<script type="text/javascript" src="js/set.stage.js"></script>
+
+	<script type="text/javascript" src="data/temp.data.js"></script>
+
+	<!--<link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,300,400italic,700italic' rel='stylesheet' type='text/css'>-->
+	<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300,200' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" type="text/css" href="../../__libs/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../../__libs/font.awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h1>Title</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div id="svg-container">
+			</div>
+		</div>
+		<div class="row">
+			<div id="si-cue" class="text-center">
+				<svg></svg>
+				<!--<a class="mouse-scroll"> 
+					<span class="mouse">
+						<span class="mouse-movement">
+						</span>
+					</span>
+					<span class="mouse-message">scroll</span> 
+				</a>-->
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+
+		setSVG();
+		drawSI();
+
+		//d3.select(document).on('wheel', setSTAGE);
+		//drawBAR({ data: bardata, range: [0, 100] });
+		//setTEXT();
+
+		drawDISPATCH[sequence[0].chart](sequence[0])
+
+		/*d3.select('.mouse-scroll').on('mouseover', function () { return d3.select('.mouse-message').style('opacity', 1); })
+			.on('mouseout', function () { return d3.select('.mouse-message').style('opacity', 0); })*/
+
+	</script>
+
+</body>
+
+</html>
