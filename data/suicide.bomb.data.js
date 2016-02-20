@@ -91,6 +91,17 @@ var bomb_humanize = [
 		color: '#c6c7b7',
 		background: '#333'
 	},
+	/*{ 
+		action: 'draw', 
+		chart: 'map', 
+		projection: d3.geo.kavrayskiy7(),
+		scale: 150,
+		zoom: 3,
+		highlight: { v: ['NGA', 'IRQ', 'AFG', 'TUR', 'SYR', 'YEM', 'TCD', 'CMR', 'PAK', 'LBN', 'KWT', 'FRA', 'SAU', 'SOM', 'LBY', 'EGY', 'CHN', 'IND', 'BGD', 'MLI', 'TUN'], c: '#9e4e40' }, 
+		text: { p: 'The countries affected were Nigeria, Iraq, Afghanistan, Turkey, Syria, Yemen, Chad, Cameroon, Pakistan, Lebanon, Kuwait, France, Saudi Arabia, Somalia, Libya, Egypt, China, India, Bangladesh, Mali and Tunisia.', x: 40, y: 5, w: 50, s: 'fast', c: null },
+		color: '#c6c7b7',
+		background: '#333'
+	},*/
 	{
 		action: 'draw',
 		chart: 'unit',
