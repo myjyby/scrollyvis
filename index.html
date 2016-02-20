@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<title>Donation page</title>
+	
+	<script type="text/javascript" src="libs/d3.js"></script>
+	<script type="text/javascript" src="libs/d3.geo.projections.js"></script>
+	<script type="text/javascript" src="libs/d3.topojson.js"></script>
+	<script type="text/javascript" src="libs/jquery.js"></script>
+	<script type="text/javascript" src="libs/bootstrap.min.js"></script>
+	<!--<script type="text/javascript" src="../../__libs/lethargy.js"></script>-->
+
+	<script type="text/javascript" src="js/general.function.js"></script>
+	<script type="text/javascript" src="js/draw.js"></script>
+	<script type="text/javascript" src="js/set.text.js"></script>
+	<script type="text/javascript" src="js/set.persona.proportions.js"></script>
+	<script type="text/javascript" src="js/set.persona.js"></script>
+
+	<script type="text/javascript" src="data/suicide.bomb.data.js"></script>
+	<script type="text/javascript" src="data/refugee.data.js"></script>
+	<script type="text/javascript" src="data/maternal.death.data.js"></script>
+	<script type="text/javascript" src="data/illiteracy.data.js"></script>
+
+	<script type="text/javascript" src="js/set.expe.naviagation.js"></script>
+	<script type="text/javascript" src="js/set.stage.js"></script>
+
+	<!--<link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,300,400italic,700italic' rel='stylesheet' type='text/css'>-->
+	<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700,300,200' rel='stylesheet' type='text/css'>
+	
+
+	<link rel="stylesheet" type="text/css" href="libs/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="libs/font.awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font.awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row" id="title-container">
+			<div class="col-md-12 text-center">
+				<h1></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div id="svg-container">
+			</div>
+
+			<div id="btn-container">
+				
+			</div>
+
+		</div>
+		<div class="row" id="si-cue-container">
+			<div id="si-cue" class="text-center">
+				<svg></svg>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+
+		//var story = refugee_story;
+		//var story = bomb_story;
+		//var story = illiteracy_story;
+		//var story = maternal_story;
+
+		var topicN = 0;
+		/*var sequence = story.story[topicN].v;
+		var title = story.title;*/
+
+		var allStories = {
+			'refugees': refugee_story,
+			'bombings': bomb_story,
+			'illiteracy': illiteracy_story,
+			'mothers': maternal_story
+		};
+
+		d3.csv('study_design.csv', function (error, study) {
+			if (error) return alert('Oops. Something went wrong.');
+			var topics = study.map(function (d) {
+				d.theme = allStories[d.theme];
+				d.theme.story = d.theme.story.filter(function (c) {
+					return c.n == d.type;
+				});
+				d.theme.story = d.theme.story[0];
+				return d.theme;
+			});
+			//console.log(topics)
+			
+			// NEED TO GET TO STEPDATA
+			//console.log(topics[topicN])
+
+			//sequence = topics[topicN].story[0].v;
+			//title = topics[topicN].title;
+
+			//setBUTTONS(topics[topicN].story[0].v[sequenceId]);
+			setBUTTONS(topics);
+		});
+
+
+
+		//setBUTTONS(story.story[topicN].v[sequenceId]);
+		//resetSVG();
+
+		/*$.ajax({
+
+		    url : 'phantom/getraster.php',
+		    type : 'GET',
+
+		    success : function(data) {              
+		        //alert('Data: '+data);
+		        console.log(data)
+		    },
+		    error : function(request,error)
+		    {
+		       // alert("Request: "+JSON.stringify(request));
+		    }
+		});*/
+
+	</script>
+
+</body>
+
+</html>
