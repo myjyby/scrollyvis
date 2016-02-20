@@ -171,7 +171,7 @@
 		var stage = new PIXI.Container();
 
 		// create a renderer instance.
-		var renderer = new PIXI.CanvasRenderer(__svg__.w, __svg__.h, null, true);
+		var renderer = PIXI.autoDetectRenderer(__svg__.w, __svg__.h, null, true);
 		//renderer.backgroundColor = 0x3498db;
 		// add the renderer view element to the DOM
 		document.body.appendChild(renderer.view);
