@@ -81,7 +81,7 @@ var bomb_humanize = [
 		background: '#333'
 	},
 	{ 
-		action: 'update', 
+		action: 'draw', 
 		chart: 'map', 
 		projection: d3.geo.kavrayskiy7(),
 		scale: 150,
