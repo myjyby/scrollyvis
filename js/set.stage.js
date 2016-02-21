@@ -39,7 +39,7 @@ function clearSTAGE (dir, charttype) {
 			.duration(__animation__.dur / 2)
 			.ease('cubic-in')
 			.attr('transform', function (d) {
-				if (['bar', 'line', 'area', 'map', 'unit'].indexOf(d.type) !== - 1) {
+				if (['bar', 'line', 'area', 'map'].indexOf(d.type) !== - 1) {
 					return 'translate(' + [0, __svg__.pt * dir] + ')';
 				} else if (d.type == 'pie') {
 					return 'translate(' + [__svg__.w / 2, __svg__.h / 2 + __svg__.pt * dir] + ') scale(1)';
@@ -50,6 +50,22 @@ function clearSTAGE (dir, charttype) {
 			.style('opacity', 0)
 			.each('end',function () { return d3.select(this).remove(); });
 	} else {
+		cancelAnimationFrame(webGLanimation);
+		renderer = null;
+		humanContainer = null;
+		humantexture = null;
+		animateWebGL = null;
+		stage = null;
+		humans.length = 0;
+		ticker.stop();
+		d3.selectAll('canvas')
+			.transition()
+			.duration(__animation__.dur / 2)
+			.style('top', function (d) {
+				return __svg__.pt * dir + 'px';
+			})
+			.style('opacity', 0)
+			.each('end',function () { return d3.select(this).remove(); });
 		chart.remove();
 	}
 

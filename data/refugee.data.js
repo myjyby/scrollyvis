@@ -113,7 +113,7 @@ var refugee_humanize = [
 		action: 'draw',
 		chart: 'unit',
 		type: 'absolute',
-		distribtion: 'ordered',
+		distribution: 'ordered',
 		data: [
 			{ n: 'Syria', v: 4181 }, // 4180920
 			{ n: 'Iraq', v: 378 }, // 377747
@@ -129,7 +129,7 @@ var refugee_humanize = [
 		action: 'update',
 		chart: 'unit',
 		type: 'absolute',
-		distribtion: 'random',
+		distribution: 'random',
 		data: [
 			{ n: 'Syrian', v: 4181 }, // 4180920
 			{ n: 'any other country ', v: 10261 } // 10260754 // Total = 14441674
@@ -144,7 +144,7 @@ var refugee_humanize = [
 		action: 'draw',
 		chart: 'unit',
 		type: 'absolute',
-		distribtion: 'ordered',
+		distribution: 'ordered',
 		data: [
 			{ n: 'refugee in Turkey', v: 1 }, // 1838848
 			{ n: 'native Turk', v: 42 } // 75857056

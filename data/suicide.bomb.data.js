@@ -91,22 +91,11 @@ var bomb_humanize = [
 		color: '#c6c7b7',
 		background: '#333'
 	},
-	/*{ 
-		action: 'draw', 
-		chart: 'map', 
-		projection: d3.geo.kavrayskiy7(),
-		scale: 150,
-		zoom: 3,
-		highlight: { v: ['NGA', 'IRQ', 'AFG', 'TUR', 'SYR', 'YEM', 'TCD', 'CMR', 'PAK', 'LBN', 'KWT', 'FRA', 'SAU', 'SOM', 'LBY', 'EGY', 'CHN', 'IND', 'BGD', 'MLI', 'TUN'], c: '#9e4e40' }, 
-		text: { p: 'The countries affected were Nigeria, Iraq, Afghanistan, Turkey, Syria, Yemen, Chad, Cameroon, Pakistan, Lebanon, Kuwait, France, Saudi Arabia, Somalia, Libya, Egypt, China, India, Bangladesh, Mali and Tunisia.', x: 40, y: 5, w: 50, s: 'fast', c: null },
-		color: '#c6c7b7',
-		background: '#333'
-	},*/
 	{
 		action: 'draw',
 		chart: 'unit',
 		type: 'absolute',
-		distribtion: 'ordered',
+		distribution: 'ordered',
 		data: [
 			{ n: 'Nigeria', v: 2062 },
 			{ n: 'Iraq', v: 1516 },
@@ -115,7 +104,7 @@ var bomb_humanize = [
 			{ n: 'Syria', v: 684 }
 		],
 		//highlight: { v: ['cat 4'], c: '#9e4e40' }, 
-		units: { t: 'isotype', l: 'grid', lbl: 'A civilian harmed in' },
+		units: { t: 'isotype', l: 'scattered', lbl: 'A civilian harmed in' },
 		text: { p: 'Nigeria, Iraq, Afghanistan, Turkey and Syria were most affected: over 6,000 civilians were harmed by suicide attackers in these countries.', x: 19, y: 3.6, w: 50, s: 'fast', c: null },
 		background: '#333'
 	},
@@ -123,13 +112,13 @@ var bomb_humanize = [
 		action: 'update',
 		chart: 'unit',
 		type: 'absolute',
-		distribtion: 'random',
+		distribution: 'random',
 		data: [
 			{ n: 'Killed', v: 2550 },
 			{ n: 'Injured', v: 6559 }
 		], 
 		highlight: { v: ['Killed'], c: '#9e4e40' },
-		units: { t: 'isotype', l: 'grid', lbl: 'A civilian ' },
+		units: { t: 'isotype', l: 'scattered', lbl: 'A civilian ' },
 		//units: { t: 'bubble', l: 'force' }
 		text: { p: 'All together, there were 248 bombings worldwide, which harmed 9109 civilians. Almost one out of three of these people were killed, while the others were injured.', x: 0.14, y: 42, w: 50, s: 'slow', c: null },
 		color: '#c6c7b7',

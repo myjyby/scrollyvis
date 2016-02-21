@@ -129,7 +129,7 @@ var maternal_humanize = [
 		action: 'draw', 
 		chart: 'unit',
 		type: 'absolute',
-		distribtion: 'ordered', 
+		distribution: 'ordered', 
 		data: [
 			{ n: 'Mother who died', v: 1 },
 			{ n: 'Mother who lived', v: 4900 }
@@ -144,7 +144,7 @@ var maternal_humanize = [
 		action: 'update', 
 		chart: 'unit', 
 		type: 'absolute',
-		distribtion: 'ordered',
+		distribution: 'ordered',
 		data: [
 			{ n: 'Mother who died', v: 1 },
 			{ n: 'Mother who lived', v: 54 }

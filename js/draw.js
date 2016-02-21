@@ -1864,3 +1864,68 @@ function clearINFOBUBBLE (node) {
 		});
 	return d3.selectAll('.info').remove();
 }
+
+function drawCANVASINFOBUBBLE (node, nx, ny, info) {
+	clearINFOBUBBLE();
+	if (node.alpha == 0) return null;
+
+	var svg = d3.select('#svg-container > svg');
+
+	var pos = [nx, ny],
+		boxpadding = 5;
+
+	var x, y, align;
+	if (pos[0] <= __svg__.w / 2) {
+		x = pos[0] + boxpadding;
+		align = 'start';
+	} else if (pos[0] > __svg__.w / 2) {
+		x = pos[0] - boxpadding * 2;
+		align = 'end';
+	}
+
+	y = pos[1];
+
+	var infobubble = d3.select('body')
+		.append('div')
+		.attr('class', 'info')
+		.style('left', x + 'px')
+		.style('top', y + 'px')
+		.style('padding', '0 ' + boxpadding + 'px')
+		.style('background-color', styling.tbg)
+		.style('color', styling.t)
+		.html(info);
+
+	/*var infobubble = svg.append('g')
+		.attr('class', 'info')
+		.attr('transform', 'translate(' + [x, y] + ')');*/
+
+	/*var rect = infobubble.append('rect')
+		.style('fill', styling.tbg);*/
+
+	/*var text = infobubble.append('text')
+		.attr('x', function () {
+			if (align == 'start') return boxpadding;
+			return 0;
+		})
+		.style('text-anchor', align)
+		.style('fill', styling.t)
+		.text(info);*/
+	var textBBox = infobubble.node().getBoundingClientRect();
+
+	/*rect.attr('x', function () {
+			if (align == 'start') return 0;
+			return -textBBox.width - boxpadding;
+		})
+		.attr('y', -textBBox.height * 3 / 4)
+		.attr('width', textBBox.width + boxpadding * 2)
+		.attr('height', textBBox.height);*/
+
+	return infobubble.style('top', y - textBBox.height / 2 + 'px')
+		.style('left', function () {
+			if (align == 'start') return x + 'px';
+			return (x - textBBox.width) + 'px';
+		});
+		//.attr('transform', 'translate(' + [x, pos[1] + textBBox.height / 4] + ')');*/
+
+	
+}
